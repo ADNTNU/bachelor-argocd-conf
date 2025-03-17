@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restapi
+spec:
+  selector:
+    matchLabels:
+      app: restapi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: restapi
+    spec:
+      hostNetwork: true
+      containers:
+      - name: restapi
+        image: danielneset/bachelor-rest-api:prod-c6743069bd94284b2485015e0a4d8c912fb252e0
+        ports:
+        - containerPort: 8080
+          protocol: TCP

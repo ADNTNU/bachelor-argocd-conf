@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway
+spec:
+  selector:
+    matchLabels:
+      app: gateway
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gateway
+    spec:
+      hostNetwork: true
+      containers:
+      - name: gateway
+        image: danielneset/bachelor-gateway:prod-1bc0da4a42af4a5dd44d0cff7aff090c97524e05
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+          - name: REST_ROUTE_URI
+            value: "http://restapi-service:8080"

@@ -12,7 +12,6 @@ spec:
       labels:
         app: gateway
     spec:
-      hostNetwork: true
       containers:
       - name: gateway
         image: danielneset/bachelor-gateway:prod-1bc0da4a42af4a5dd44d0cff7aff090c97524e05

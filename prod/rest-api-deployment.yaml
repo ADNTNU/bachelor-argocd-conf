@@ -12,7 +12,6 @@ spec:
       labels:
         app: restapi
     spec:
-      hostNetwork: true
       containers:
       - name: restapi
         image: danielneset/bachelor-rest-api:prod-33da93ac29f649f0062b256bdd8db6ce0c715797

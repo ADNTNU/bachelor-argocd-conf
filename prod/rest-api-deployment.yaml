@@ -15,7 +15,25 @@ spec:
       hostNetwork: true
       containers:
       - name: restapi
-        image: danielneset/bachelor-rest-api:prod-c6743069bd94284b2485015e0a4d8c912fb252e0
+        image: danielneset/bachelor-rest-api:prod-33da93ac29f649f0062b256bdd8db6ce0c715797
         ports:
         - containerPort: 8080
           protocol: TCP
+        env:
+          - name: PORT
+            value: "8080"
+          - name: DDL
+            value: "update"
+          - name: DB_HOST
+            value: "mysql"
+          - name: "DB_PORT"
+            value: "3306"
+          - name: "DB_NAME"
+            value: "ships"
+          - name: "DB_USERNAME"
+            value: "root"
+          - name: "DB_PASSWORD"
+            valueFrom:
+              secretRefKey:
+                name: mysql-secret
+                key: mysql-root-password

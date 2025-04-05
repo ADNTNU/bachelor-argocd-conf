@@ -34,6 +34,6 @@ spec:
             value: "root"
           - name: "DB_PASSWORD"
             valueFrom:
-              secretRefKey:
+              secretKeyRef:
                 name: mysql-secret
                 key: mysql-root-password

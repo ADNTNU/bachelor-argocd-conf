@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: access-control-frontend
+spec:
+  selector:
+    matchLabels:
+      app: access-control-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: access-control-frontend
+    spec:
+      containers:
+      - name: access-control-frontend
+        image: danielneset/bachelor-access-control-frontend:prod-web-57cf53d0d209a050d52bdd8ea600768decda7dcb
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        env:
+          - name: AUTH_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: mysql-root-password
+          - name: NEXT_PUBLIC_BACKEND_BASE_URL
+            value: "https://admin.flightfinder.space"
+

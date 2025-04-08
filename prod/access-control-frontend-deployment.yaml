@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: access-control-frontend
-        image: danielneset/bachelor-access-control-frontend:prod-web-6ae0eaabc622039ca946a79ee6825fd99192d990
+        image: danielneset/bachelor-access-control-frontend:prod-web-ab2b5b430aff08e2c803f6e0bb7072b26c6a6dd7
         ports:
         - containerPort: 3000
           protocol: TCP
@@ -28,3 +28,5 @@ spec:
             value: "https://admin.flightfinder.space"
           - name: AUTH_TRUST_HOST
             value: "true"
+          - name: BACKEND_INTERNAL_URL
+            value: "http://access-control-backend-service:8080"

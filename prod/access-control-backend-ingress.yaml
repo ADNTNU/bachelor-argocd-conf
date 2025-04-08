@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: access-control-backend-service
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: admin.flightfinder.space
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: access-control-backend-service
+            port:
+              number: 8080

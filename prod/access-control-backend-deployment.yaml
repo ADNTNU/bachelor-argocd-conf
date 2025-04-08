@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: access-control-backend
+spec:
+  selector:
+    matchLabels:
+      app: access-control-backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: access-control-backend
+    spec:
+      containers:
+      - name: access-control-backend
+        image: danielneset/bachelor-access-control-backend:prod-f6cf2c02f534389e67f480dacc1a4c54a4a6ce0a
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+          - name: PORT
+            value: "8080"
+          - name: DDL
+            value: "update"
+          - name: DB_HOST
+            value: "mysql"
+          - name: "DB_PORT"
+            value: "3306"
+          - name: "DB_NAME"
+            value: "ships"
+          - name: "DB_USERNAME"
+            value: "root"
+          - name: "DB_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: mysql-root-password

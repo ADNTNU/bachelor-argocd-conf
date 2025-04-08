@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: access-control-frontend
-        image: danielneset/bachelor-access-control-frontend:prod-web-57cf53d0d209a050d52bdd8ea600768decda7dcb
+        image: danielneset/bachelor-access-control-frontend:prod-web-6ae0eaabc622039ca946a79ee6825fd99192d990
         ports:
         - containerPort: 3000
           protocol: TCP
@@ -26,4 +26,5 @@ spec:
                 key: mysql-root-password
           - name: NEXT_PUBLIC_BACKEND_BASE_URL
             value: "https://admin.flightfinder.space"
-
+          - name: AUTH_TRUST_HOST
+            value: "true"

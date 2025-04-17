@@ -41,5 +41,5 @@ spec:
           - name: "JWT_KEY"
             valueFrom:
               secretKeyRef:
-                name: api-jwt
-                key: api-jwt-key
+                name: mysql-secret
+                key: mysql-root-password

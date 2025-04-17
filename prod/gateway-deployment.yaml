@@ -38,3 +38,8 @@ spec:
               secretKeyRef:
                 name: mysql-secret
                 key: mysql-root-password
+          - name: "JWT_KEY"
+            valueFrom:
+              secretKeyRef:
+                name: api-jwt
+                key: api-jwt-key

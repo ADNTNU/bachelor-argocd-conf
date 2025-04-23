@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: access-control-backend
-        image: danielneset/bachelor-access-control-backend:prod-694236f4761c5a946a4f792aff02b922e5b2aaec
+        image: danielneset/bachelor-access-control-backend:prod-1dc947b494927640a488f15a55592588dee8c4fa
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -28,7 +28,7 @@ spec:
           - name: "DB_PORT"
             value: "3306"
           - name: "DB_NAME"
-            value: "ships"
+            value: "acDev"
           - name: "DB_USERNAME"
             value: "root"
           - name: "DB_PASSWORD"
@@ -36,3 +36,8 @@ spec:
               secretKeyRef:
                 name: mysql-secret
                 key: mysql-root-password
+          - name: "SENDGRID_API_KEY"
+            valueFrom:
+              secretKeyRef:
+                name: send-grip-api
+                key: send-grip-api-key

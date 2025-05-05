@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: gateway-grpc
   annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
 spec:
   ingressClassName: nginx

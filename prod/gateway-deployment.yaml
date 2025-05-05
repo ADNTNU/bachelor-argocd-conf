@@ -20,8 +20,6 @@ spec:
           containerPort: 8080
         - name: grpc
           containerPort: 9090
-
-
         env:
           - name: REST_ROUTE_URI
             value: "http://restapi-service:8080"

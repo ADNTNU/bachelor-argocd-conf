@@ -16,13 +16,19 @@ spec:
       - name: gateway
         image: danielneset/bachelor-gateway:prod-7e055b5c2adf95e2290c51b311a5efd6f8de2c99
         ports:
-        - containerPort: 8080
-          protocol: TCP
+        - name: http
+          containerPort: 8080
+        - name: grpc
+          containerPort: 9090
+
+
         env:
           - name: REST_ROUTE_URI
             value: "http://restapi-service:8080"
           - name: PORT
             value: "8080"
+          - name: GRPC_PORT
+            value: "9090"
           - name: DDL
             value: "update"
           - name: DB_HOST

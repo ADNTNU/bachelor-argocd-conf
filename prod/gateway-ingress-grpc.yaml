@@ -2,8 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: gateway-grpc
-  annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+  annotations:    
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC" 
 spec:
   ingressClassName: nginx
   tls:

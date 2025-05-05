@@ -7,8 +7,8 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-    - host:
-      - api.flightfinder.space
+    - hosts:
+        - api.flightfinder.space
       secretName: origin-ca-tls
   rules:
   - host: api.flightfinder.space

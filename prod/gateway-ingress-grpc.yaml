@@ -3,15 +3,15 @@ kind: Ingress
 metadata:
   name: gateway-grpc
   annotations:
-    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
 spec:
+  ingressClassName: nginx
   rules:
   - host: api.flightfinder.space
     http:
       paths:
       - path: /
-        pathType: ImplementationSpecific
+        #pathType: ImplementationSpecific
         backend:
           service:
             name: gateway-service

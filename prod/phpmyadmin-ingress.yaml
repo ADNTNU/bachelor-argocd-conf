@@ -4,6 +4,10 @@ metadata:
   name: phpmyadmin-ingress
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+      - phpmyadmin.flightfinder.space
+    secretName: origin-ca-tls
   rules:
   - host: phpmyadmin.flightfinder.space
     http:

@@ -4,8 +4,12 @@ metadata:
   name: gateway-http
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+      - api.flightfinder.space
+    secretName: origin-ca-tls
   rules:
-  - host: api2.flightfinder.space
+  - host: api.flightfinder.space
     http:
       paths:
       - path: /

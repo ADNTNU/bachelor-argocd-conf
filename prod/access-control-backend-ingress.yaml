@@ -4,6 +4,10 @@ metadata:
   name: access-control-backend-service
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+      - admin.flightfinder.space
+    secretName: origin-ca-tls
   rules:
   - host: admin.flightfinder.space
     http:

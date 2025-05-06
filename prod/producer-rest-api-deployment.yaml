@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: producerrestapi
-        image: danielneset/bachelor-producer-rest-api:prod-b6f683cf835849a0579a1bf6172415bbbe515501
+        image: danielneset/bachelor-producer-rest-api:prod-db1537078feb70673cfe8be9ecbe7ce865d68704
         ports:
         - containerPort: 8080
           protocol: TCP

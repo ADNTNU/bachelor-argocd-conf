@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: access-control-backend
-        image: danielneset/bachelor-access-control-backend:prod-3aa916d6204cc2c823d054d67d227daef3fa8343
+        image: danielneset/bachelor-access-control-backend:prod-fedfdeb85aa2944b9a3b2dbd6100374f9724763b
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -41,3 +41,8 @@ spec:
               secretKeyRef:
                 name: send-grip-api
                 key: send-grip-api-key
+          - name: "JWT_TOKEN"
+            valueFrom:
+              secretKeyRef:
+                name: api-jwt
+                key: api-jwt-key

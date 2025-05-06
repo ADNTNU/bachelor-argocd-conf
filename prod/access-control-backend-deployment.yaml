@@ -28,7 +28,7 @@ spec:
           - name: "DB_PORT"
             value: "3306"
           - name: "DB_NAME"
-            value: "acDev"
+            value: "prod"
           - name: "DB_USERNAME"
             value: "root"
           - name: "DB_PASSWORD"

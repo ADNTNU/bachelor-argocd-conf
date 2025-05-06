@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: danielneset/bachelor-gateway:prod-cea787cacb1ffa843986693d1b8ddefdb96f7c7f
+        image: danielneset/bachelor-gateway:prod-1dd94e2b9c3a814fcee80d21d52ffe5646e1937c
         ports:
         - name: http
           containerPort: 8080
@@ -23,6 +23,10 @@ spec:
         env:
           - name: REST_ROUTE_URI
             value: "http://restapi-service:8080"
+          - name: WS_ROUTE_URI
+            value: "ws://localhost:8086"
+          - name: PRODUCER_REST_ROUTE_URI
+            value: "http://localhost:8083"
           - name: PORT
             value: "8080"
           - name: GRPC_PORT
@@ -47,3 +51,7 @@ spec:
               secretKeyRef:
                 name: api-jwt
                 key: api-jwt-key
+          - name: GRPC_API_HOST
+            value: "grpcapi-service"
+          - name: GRPC_API_PORT
+            value: "9090"

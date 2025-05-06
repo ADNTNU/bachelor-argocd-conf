@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpcapi
+spec:
+  selector:
+    matchLabels:
+      app: grpcapi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: grpcapi
+    spec:
+      containers:
+      - name: grpcapi
+        image: danielneset/bachelor-grpc-api:prod-4b903b0dbac73c28f4bdd31d3fe0e4c2106d3e80
+        ports:
+        - containerPort: 9090
+          protocol: TCP
+        env:
+          - name: PORT
+            value: "9090"
+          - name: DDL
+            value: "update"
+          - name: DB_HOST
+            value: "mysql"
+          - name: "DB_PORT"
+            value: "3306"
+          - name: "DB_NAME"
+            value: "prod"
+          - name: "DB_USERNAME"
+            value: "root"
+          - name: "DB_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: mysql-root-password
+          - name: "JWT_KEY"
+            valueFrom:
+              secretKeyRef:
+                name: api-jwt
+                key: api-jwt-key

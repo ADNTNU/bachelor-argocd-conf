@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: restapi
-        image: danielneset/bachelor-rest-api:prod-60b27ce178a191b05aeb759ec989d1aca54de253
+        image: danielneset/bachelor-rest-api:prod-1ffc9b2173743a4b6968cd4c19a0939720b9c244
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -28,7 +28,7 @@ spec:
           - name: "DB_PORT"
             value: "3306"
           - name: "DB_NAME"
-            value: "dev"
+            value: "prod"
           - name: "DB_USERNAME"
             value: "root"
           - name: "DB_PASSWORD"

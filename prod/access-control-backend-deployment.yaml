@@ -41,8 +41,4 @@ spec:
               secretKeyRef:
                 name: send-grip-api
                 key: send-grip-api-key
-          - name: "JWT_TOKEN"
-            valueFrom:
-              secretKeyRef:
-                name: api-jwt
-                key: api-jwt-key
+

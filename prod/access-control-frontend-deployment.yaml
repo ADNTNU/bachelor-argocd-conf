@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: access-control-frontend
-        image: danielneset/bachelor-access-control-frontend:prod-web-778c4a23633b770383ad71563a26e5e671fac6dd
+        image: danielneset/bachelor-access-control-frontend:prod-web-11f7b517c55acb9ed9a55ff4a924cacfa969138a
         ports:
         - containerPort: 3000
           protocol: TCP
@@ -30,3 +30,5 @@ spec:
             value: "true"
           - name: BACKEND_INTERNAL_URL
             value: "http://access-control-backend-service:8080"
+          - name: NEXTAUTH_URL
+            value: "https://flightfinder.space"

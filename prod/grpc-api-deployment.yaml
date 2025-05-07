@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: grpcapi
-        image: danielneset/bachelor-grpc-api:prod-d22b745b85c8b10f76e9c22a84a787cae756a626
+        image: danielneset/bachelor-grpc-api:prod-077956dd2f9d0fae912804faba589ab32264a708
         ports:
         - containerPort: 9090
           protocol: TCP

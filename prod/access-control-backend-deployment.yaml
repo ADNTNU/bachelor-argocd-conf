@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: access-control-backend
-        image: danielneset/bachelor-access-control-backend:prod-1e23ecb10f865a9e0c6abf11b5f53ceb5e0f0a5f
+        image: danielneset/bachelor-access-control-backend:prod-a4ba9f5ee95cce8dd70a0feca2daa149126b27fb
         ports:
         - containerPort: 8080
           protocol: TCP

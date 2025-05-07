@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: access-control-frontend
-        image: danielneset/bachelor-access-control-frontend:prod-web-e9eed421a6c6603f6f86ab53d94eb5c6bf5687fb
+        image: danielneset/bachelor-access-control-frontend:prod-web-b9079984b52e84fe6f95e9b8d40c6828703bcbe9
         ports:
         - containerPort: 3000
           protocol: TCP

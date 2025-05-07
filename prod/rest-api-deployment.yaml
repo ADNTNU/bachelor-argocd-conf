@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: restapi
-        image: danielneset/bachelor-rest-api:prod-fb16e7135bfcae5223bfdc8c5f2d2fa0d6a0fea2
+        image: danielneset/bachelor-rest-api:prod-5b9134c0a70b250052bc0b7554d6e7397c8d7d1a
         ports:
         - containerPort: 8080
           protocol: TCP

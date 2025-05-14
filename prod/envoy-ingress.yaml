@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - grpc-web.flightfinder.com
+        - grpc-web.flightfinder.space
       secretName: origin-ca-tls
   rules:
-    - host: grpc-web.flightfinder.com
+    - host: grpc-web.flightfinder.space
       http:
         paths:
           - path: /

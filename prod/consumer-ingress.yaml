@@ -6,10 +6,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-      - flightfinder.space
+      - consumer.flightfinder.space
     secretName: origin-ca-tls
   rules:
-  - host: flightfinder.space
+  - host: consumer.flightfinder.space
     http:
       paths:
       - path: /

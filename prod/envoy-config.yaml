@@ -19,10 +19,16 @@ data:
                     stat_prefix: ingress_grpc_web
                     codec_type: AUTO
                     http_filters:
-                      - name: envoy.filters.http.grpc_web
-                      - name: envoy.filters.http.cors
-                      - name: envoy.filters.http.router
-                    route_config:
+                          - name: envoy.filters.http.grpc_web
+                            typed_config:
+                              "@type": type.googleapis.com/envoy.extensions.filters.http.grpc_web.v3.GrpcWeb
+                          - name: envoy.filters.http.cors
+                            typed_config:
+                              "@type": type.googleapis.com/envoy.extensions.filters.http.cors.v3.Cors
+                          - name: envoy.filters.http.router
+                            typed_config:
+                              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+                        route_config:
                       name: grpc_web_routes
                       virtual_hosts:
                         - name: grpc_web

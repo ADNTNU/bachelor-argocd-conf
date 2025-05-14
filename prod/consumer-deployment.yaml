@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer
+spec:
+  selector:
+    matchLabels:
+      app: consumer
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: consumer
+    spec:
+      containers:
+      - name: consumer
+        image: danielneset/bachelor-consumer:4c471d81f76086f1df6c4cf6c7df5cf3b750e05b
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        env:
+          - name: AUTH_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: next-auth
+                key: next-auth-key
+          - name: AUTH_TRUST_HOST
+            value: "true"
+          - name: NEXTAUTH_URL
+            value: "https://consumer.flightfinder.space"
+          - name: NEXT_PUBLIC_HTTP_GATEWAY_BASE_URL
+            value: "https://api.flightfinder.space"
+          - name: NEXT_PUBLIC_WS_GATEWAY_BASE_URL
+            value: "https://api.flightfinder.space"
+          - name: NEXT_PUBLIC_GRPC_GATEWAY_BASE_URL
+            value: "https://grpc-web.flightfinder.space"

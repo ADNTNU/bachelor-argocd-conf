@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: danielneset/bachelor-gateway:prod-cb1d5beab42fc1601d636ef2d29164ccf1c84e08
+        image: danielneset/bachelor-gateway:prod-f56a5b224eac5c1f4d444c2d5e8db5dd51f02f2a
         ports:
         - name: http
           containerPort: 8080
@@ -55,3 +55,7 @@ spec:
             value: "grpcapi-service"
           - name: GRPC_API_PORT
             value: "9090"
+          - name: "REDIS_HOST"
+            value: "redis"
+          - name: "REDIS_PORT"
+            value: "6379"

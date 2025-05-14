@@ -28,6 +28,8 @@ spec:
             value: "true"
           - name: NEXTAUTH_URL
             value: "https://consumer.flightfinder.space"
+          - name: INTERNAL_GATEWAY_BASE_URL
+            value: "http://gateway-service:8080"
           - name: NEXT_PUBLIC_HTTP_GATEWAY_BASE_URL
             value: "https://api.flightfinder.space"
           - name: NEXT_PUBLIC_WS_GATEWAY_BASE_URL

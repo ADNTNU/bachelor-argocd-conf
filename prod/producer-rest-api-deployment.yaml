@@ -41,5 +41,8 @@ spec:
               secretKeyRef:
                 name: api-jwt
                 key: api-jwt-key
-          - name: "RABBITMQ_HOST"
-            value: "rabbitmq"
+          - name: RABBITMQ_HOST
+            value: rabbitmq
+          - name: RABBITMQ_PORT
+            value: "5672"
+          

@@ -15,7 +15,7 @@ spec:
       containers:
         - name: envoy
           image: envoyproxy/envoy:v1.25.0
-          args: ["-c", "/etc/envoy/envoy.yaml"]
+          args: ["-c", "/etc/envoy/envoy.yaml", "-l", "debug"]
           ports:
             - name: grpc-web
               containerPort: 8080

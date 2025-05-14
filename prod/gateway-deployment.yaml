@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: danielneset/bachelor-gateway:prod-02537fdf9d95d7159708559082c38f6f06beb196
+        image: danielneset/bachelor-gateway:prod-8aefc113ab66ee11a93483dbe42d02875bf9476e
         ports:
         - name: http
           containerPort: 8080

@@ -50,5 +50,5 @@ data:
                   - endpoint:
                       address:
                         socket_address:
-                          address: gateway-service.default.svc.cluster.local
+                          address: gateway-service
                           port_value: 9090

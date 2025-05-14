@@ -59,3 +59,5 @@ spec:
             value: "redis"
           - name: "REDIS_PORT"
             value: "6379"
+          - name: "CORS_ORIGINS"
+            value: "https://consumer.flightfinder.space"

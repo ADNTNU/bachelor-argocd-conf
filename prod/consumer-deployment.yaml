@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: consumer
-        image: danielneset/bachelor-consumer:4c471d81f76086f1df6c4cf6c7df5cf3b750e05b
+        image: danielneset/bachelor-consumer:6c6f2647440f64ffa64dd364ca7ef835750c9813
         ports:
         - containerPort: 3000
           protocol: TCP

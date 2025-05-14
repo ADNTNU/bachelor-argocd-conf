@@ -24,7 +24,7 @@ spec:
           - name: REST_ROUTE_URI
             value: "http://restapi-service:8080"
           - name: WS_ROUTE_URI
-            value: "ws://localhost:8086"
+            value: "ws://websocket-service:8080"
           - name: PRODUCER_REST_ROUTE_URI
             value: "http://producerrestapi-service:8080"
           - name: PORT

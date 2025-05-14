@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: producerrestapi
-        image: danielneset/bachelor-producer-rest-api:prod-1f63f541afd5047901efa1b0b2cb53f5579ec1b1
+        image: danielneset/bachelor-producer-rest-api:prod-c259e75a029ad9cfeba0c5b95222c9fb06a0d187
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -45,4 +45,11 @@ spec:
             value: rabbitmq
           - name: RABBITMQ_PORT
             value: "5672"
+          - name: RABBITMQ_USERNAME
+            value: "user"
+          - name: RABBITMQ_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: rabbit
+                key: rabbit-key
           
